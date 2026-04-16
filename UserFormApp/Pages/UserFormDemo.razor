@@ -1,0 +1,21 @@
+@using UserFormApp.Components
+
+@page "/user-form-demo"
+
+<h3>User Form Demo</h3>
+
+<UserForm Model="@user"
+          OnSubmit="HandleSubmit"
+          ButtonText="Save User" />
+
+<p><b>Last Saved:</b> @lastSaved</p>
+
+@code {
+    private UserModel user = new() { Name = "", Address = "", Email = "" };
+    private string lastSaved = "";
+
+    private void HandleSubmit(UserModel model)
+    {
+        lastSaved = $"{model.Name} - {model.Email}";
+    }
+}

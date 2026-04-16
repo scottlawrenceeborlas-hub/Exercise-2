@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Machu\\Desktop\\Files\\Documents\\Scott\\Projects\\.NET\\UserFormApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\UserFormApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\UserFormApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Machu\\Desktop\\Files\\Documents\\Scott\\Projects\\.NET\\UserFormApp\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Machu\\Desktop\\Files\\Documents\\Scott\\Projects\\.NET\\UserFormApp\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Machu\\Desktop\\Files\\Documents\\Scott\\Projects\\.NET\\UserFormApp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Machu\\Desktop\\Files\\Documents\\Scott\\Projects\\.NET\\UserFormApp\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.UserFormApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.UserFormApp.props",
+      "PackagePath": "build\\UserFormApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.UserFormApp.props",
+      "PackagePath": "buildMultiTargeting\\UserFormApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.UserFormApp.props",
+      "PackagePath": "buildTransitive\\UserFormApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,78 @@
+@rendermode InteractiveServer
+
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@Model" OnValidSubmit="Submit" FormName="userForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Name</label>
+        <InputText @bind-Value="Model.Name" />
+        <ValidationMessage For="@(() => Model.Name)" />
+    </div>
+
+    <div>
+        <label>Address</label>
+        <InputText @bind-Value="Model.Address" />
+    </div>
+
+    <div>
+        <label>Age</label>
+        <InputNumber @bind-Value="Model.Age" />
+        <ValidationMessage For="@(() => Model.Age)" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <InputText @bind-Value="Model.Email" @onblur="CheckEmail" />
+        <ValidationMessage For="@(() => Model.Email)" />
+    </div>
+
+    <button type="submit" disabled="@isSubmitting">
+        @(ButtonText ?? "Submit")
+    </button>
+
+    @if (!string.IsNullOrWhiteSpace(Message))
+    {
+        <p>@Message</p>
+    }
+</EditForm>
+
+@code {
+    [Parameter] public required UserModel Model { get; set; }
+    [Parameter] public EventCallback<UserModel> OnSubmit { get; set; }
+    [Parameter] public required string ButtonText { get; set; }
+
+    private bool isSubmitting;
+    private string Message = "";
+
+    private static List<string> takenEmails = new() { "test@test.com" };
+
+    private async Task Submit()
+    {
+        if (isSubmitting) return;
+
+        isSubmitting = true;
+
+        await OnSubmit.InvokeAsync(Model);
+
+        Message = "Saved successfully";
+
+        isSubmitting = false;
+    }
+
+    private async Task CheckEmail()
+    {
+        await Task.Delay(200);
+
+        if (!string.IsNullOrEmpty(Model.Email) && takenEmails.Contains(Model.Email.ToLower()))
+        {
+            Message = "Email already exists";
+        }
+        else
+        {
+            Message = "";
+        }
+    }
+}

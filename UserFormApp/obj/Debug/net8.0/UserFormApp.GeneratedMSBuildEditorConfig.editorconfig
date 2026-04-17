@@ -34,16 +34,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Machu/Desktop/Files/Documents/Scott/Projects/.NET/UserFormApp/Components/UserForm.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyRm9ybS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Machu/Desktop/Files/Documents/Scott/Projects/.NET/UserFormApp/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Machu/Desktop/Files/Documents/Scott/Projects/.NET/UserFormApp/Pages/UserFormDemo.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckZvcm1EZW1vLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Machu/Desktop/Files/Documents/Scott/Projects/.NET/UserFormApp/Components/Layout/MainLayout.razor]
@@ -53,3 +45,11 @@ build_metadata.AdditionalFiles.CssScope = b-p4gjjlnp6r
 [C:/Users/Machu/Desktop/Files/Documents/Scott/Projects/.NET/UserFormApp/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-dwc92mvpc3
+
+[C:/Users/Machu/Desktop/Files/Documents/Scott/Projects/.NET/UserFormApp/Components/UserForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVc2VyRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-cbs3iq3a39
+
+[C:/Users/Machu/Desktop/Files/Documents/Scott/Projects/.NET/UserFormApp/Pages/UserFormDemo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckZvcm1EZW1vLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ygl6bjo9gq

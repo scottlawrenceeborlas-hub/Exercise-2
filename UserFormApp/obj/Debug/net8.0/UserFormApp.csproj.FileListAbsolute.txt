@@ -27,3 +27,6 @@ C:\Users\Machu\Desktop\Files\Documents\Scott\Projects\.NET\UserFormApp\obj\Debug
 C:\Users\Machu\Desktop\Files\Documents\Scott\Projects\.NET\UserFormApp\obj\Debug\net8.0\UserFormApp.pdb
 C:\Users\Machu\Desktop\Files\Documents\Scott\Projects\.NET\UserFormApp\obj\Debug\net8.0\UserFormApp.genruntimeconfig.cache
 C:\Users\Machu\Desktop\Files\Documents\Scott\Projects\.NET\UserFormApp\obj\Debug\net8.0\ref\UserFormApp.dll
+C:\Users\Machu\Desktop\Files\Documents\Scott\Projects\.NET\UserFormApp\obj\Debug\net8.0\UserFormApp.sourcelink.json
+C:\Users\Machu\Desktop\Files\Documents\Scott\Projects\.NET\UserFormApp\obj\Debug\net8.0\scopedcss\Components\UserForm.razor.rz.scp.css
+C:\Users\Machu\Desktop\Files\Documents\Scott\Projects\.NET\UserFormApp\obj\Debug\net8.0\scopedcss\Pages\UserFormDemo.razor.rz.scp.css

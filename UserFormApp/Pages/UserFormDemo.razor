@@ -2,13 +2,17 @@
 
 @page "/user-form-demo"
 
-<h3>User Form Demo</h3>
+<div class="page-shell">
+    <div class="page-card">
+        <h3>User Form Demo</h3>
 
-<UserForm Model="@user"
-          OnSubmit="HandleSubmit"
-          ButtonText="Save User" />
+        <UserForm Model="@user"
+                  OnSubmit="HandleSubmit"
+                  ButtonText="Save User" />
 
-<p><b>Last Saved:</b> @lastSaved</p>
+        <p class="last-saved"><b>Last Saved:</b> @lastSaved</p>
+    </div>
+</div>
 
 @code {
     private UserModel user = new() { Name = "", Address = "", Email = "" };

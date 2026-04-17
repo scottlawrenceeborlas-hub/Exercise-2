@@ -2,52 +2,76 @@
 
 @using System.ComponentModel.DataAnnotations
 
-<EditForm Model="@Model" OnValidSubmit="Submit" FormName="userForm">
+<EditForm Model="@workingModel" OnValidSubmit="Submit" FormName="userForm" class="user-form">
     <DataAnnotationsValidator />
-    <ValidationSummary />
+    <ValidationSummary class="validation-summary" />
 
-    <div>
-        <label>Name</label>
-        <InputText @bind-Value="Model.Name" />
-        <ValidationMessage For="@(() => Model.Name)" />
+    <div class="form-group">
+        <label class="form-label">Name</label>
+        <InputText class="form-control" @bind-Value="workingModel.Name" />
+        <ValidationMessage For="@(() => workingModel.Name)" />
     </div>
 
-    <div>
-        <label>Address</label>
-        <InputText @bind-Value="Model.Address" />
+    <div class="form-group">
+        <label class="form-label">Address</label>
+        <InputText class="form-control" @bind-Value="workingModel.Address" />
     </div>
 
-    <div>
-        <label>Age</label>
-        <InputNumber @bind-Value="Model.Age" />
-        <ValidationMessage For="@(() => Model.Age)" />
+    <div class="form-group">
+        <label class="form-label">Age</label>
+        <InputNumber class="form-control" @bind-Value="workingModel.Age" />
+        <ValidationMessage For="@(() => workingModel.Age)" />
     </div>
 
-    <div>
-        <label>Email</label>
-        <InputText @bind-Value="Model.Email" @onblur="CheckEmail" />
-        <ValidationMessage For="@(() => Model.Email)" />
+    <div class="form-group">
+        <label class="form-label">Email</label>
+        <InputText class="form-control" Value="@workingModel.Email" ValueChanged="@OnEmailChanged" ValueExpression="@(() => workingModel.Email)" />
+        <ValidationMessage For="@(() => workingModel.Email)" />
     </div>
 
-    <button type="submit" disabled="@isSubmitting">
-        @(ButtonText ?? "Submit")
-    </button>
+    <div class="form-actions">
+        <button type="submit" class="save-button" disabled="@isSubmitting">
+            @(ButtonText ?? "Submit")
+        </button>
+    </div>
 
     @if (!string.IsNullOrWhiteSpace(Message))
     {
-        <p>@Message</p>
+        <p class="message">@Message</p>
     }
 </EditForm>
 
 @code {
+    public enum FormMode { Create, Edit }
+
     [Parameter] public required UserModel Model { get; set; }
     [Parameter] public EventCallback<UserModel> OnSubmit { get; set; }
     [Parameter] public required string ButtonText { get; set; }
+    [Parameter] public FormMode Mode { get; set; } = FormMode.Create;
 
+    private UserModel workingModel = new() { Name = "", Address = "", Email = "" };
     private bool isSubmitting;
     private string Message = "";
 
     private static List<string> takenEmails = new() { "test@test.com" };
+
+    protected override void OnParametersSet()
+    {
+        if (Mode == FormMode.Edit)
+        {
+            workingModel = new UserModel
+            {
+                Name = Model.Name,
+                Address = Model.Address,
+                Age = Model.Age,
+                Email = Model.Email
+            };
+        }
+        else
+        {
+            workingModel = Model;
+        }
+    }
 
     private async Task Submit()
     {
@@ -55,18 +79,24 @@
 
         isSubmitting = true;
 
-        await OnSubmit.InvokeAsync(Model);
+        await OnSubmit.InvokeAsync(workingModel);
 
         Message = "Saved successfully";
 
         isSubmitting = false;
     }
 
+    private async Task OnEmailChanged(string value)
+    {
+        workingModel.Email = value;
+        await CheckEmail();
+    }
+
     private async Task CheckEmail()
     {
         await Task.Delay(200);
 
-        if (!string.IsNullOrEmpty(Model.Email) && takenEmails.Contains(Model.Email.ToLower()))
+        if (!string.IsNullOrEmpty(workingModel.Email) && takenEmails.Contains(workingModel.Email.ToLower()))
         {
             Message = "Email already exists";
         }
